@@ -53,4 +53,30 @@ void loop() {
 
 ```
 
+# Documentation for Divoom64Communicator - class
+
+###    int clearAllTexts();
+Clear all texts on display which are drawn with `sendText`, `sendScrollText`.
+###    int resetPicID();
+Sets the internal used PicID on the divoom device back to 0: You should allways use this before sending your first rgb to device
+### int sendRGB(RGB *screen);
+Send (prepared) RGB * to device
+### int sendText(int x, int y, String text, int textID, String rgbColor, int font = 3);
+Note: Divoom provides 7 different fonts (parameter font), the textID identifies the string on the display. This lets you modify a specific string on the display if needed
+### int sendScrollText ( int x, int y, String text, int textID, String rgbColor, int textWidth, int scrollSpeed, int font = 3);
+Same as sendText, but Text is scrolling with scrollSpeed scrollSpeed
+### int displayList ( String list);  
+Display Messages, Time or Temperatur strings with a single statement. Note: You can only use one displayList statement on a screen. Multiple calls deletes other Texts. 
+Note: fonts are different to the ones available for sendText. Use this method especially, when you need small fonts
+###  int displaySmallText ( int x, int y, String text, int textID, String rgbColor );
+###  int displayTime ( int  x, int  y, int textID, String rgbColor, int withSeconds=0 );
+###  int displayTemperatur ( int  x, int  y, String text, int textID, String rgbColor, int tempmode=0 );
+All methods are needed for displayList
+
+
+    String Time(int  x, int  y, int textID, String rgbColor, int withSeconds=0 );
+    String Temperatur ( int  x, int  y, String text, int textID, String rgbColor, int tempmode=0 );
+    String Message ( int x, int y, String text, int textID, String rgbColor );
+
+
 (Directory structure follows PlatformIO instructions.)
