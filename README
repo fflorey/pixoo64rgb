@@ -1,4 +1,4 @@
-Use your pixoo64 as a remote risplay for your esp32!
+**Use your pixoo64 as a remote risplay for your esp32!
 
 This library gives a more easy access to the REST API of the Divoom Pixoo64 from your ESP32 or similiar devices (has only been tested with some esp32 dev boards!)
 The REST API can be found at
