@@ -1,2 +1,13 @@
+Use your pixoo64 as a remote risplay for your esp32!
 
-Directory structure follows PlatformIO instructions. 
+This library gives a more easy access to the REST API of the Divoom Pixoo64 from your ESP32 or similiar devices (has only been tested with some esp32 dev boards!)
+The REST API can be found at
+https://www.divoom.com/de-de/apps/help-center#!hc-pixoo64-developeropen-sourcesdkapiopen-source
+(as of Feb 2022)
+
+A big thank you for the idea to create the image in memory upfront with some simple algorithms. 
+With some simple lines of code and this library, you can use the Pixoo64 as a wireless display for your ESP32.
+
+
+
+(Directory structure follows PlatformIO instructions.)
