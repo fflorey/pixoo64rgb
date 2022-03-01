@@ -5,9 +5,9 @@ The REST API can be found at
 https://www.divoom.com/de-de/apps/help-center#!hc-pixoo64-developeropen-sourcesdkapiopen-source
 (as of Feb 2022)
 
-## Contribution
+## Thanks
 A big "thank you" for the idea to create the image in memory upfront with some simple algorithms goes to Ron Talman and his work: 
-GitHub - SomethingWithComputers/pixoo: A library to help you make the most out of your Pixoo 64 (and hopefully soon other Wi-Fi enabled Pixoos)
+https://github.com/SomethingWithComputers/pixoo
 
 With some simple lines of code and this library, you can use the Pixoo64 as a wireless display for your ESP32.
 
