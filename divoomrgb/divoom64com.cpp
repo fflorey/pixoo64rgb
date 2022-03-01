@@ -2,7 +2,7 @@
 #include <divoom64com.h>
 #include <rgbplot.h>
 
-#define DIVOOMADDR "http://192.168.178.115/post" // e.g.: "http://192.168.178.10/post"
+#define DIVOOMADDR "http://YOURLOCALIPHERE/post" // e.g.: "http://192.168.178.10/post"
 
 Divoom64Communicator::Divoom64Communicator() {
     http.begin(DIVOOMADDR);
