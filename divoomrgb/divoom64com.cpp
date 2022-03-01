@@ -2,8 +2,10 @@
 #include <divoom64com.h>
 #include <rgbplot.h>
 
+#define DIVOOMADDR "http://YOURLOCALADDRESSHERE/post" // e.g.: "http://192.168.178.10/post"
+
 Divoom64Communicator::Divoom64Communicator() {
-    http.begin("http://192.168.178.115/post");
+    http.begin(DIVOOMADDR);
     RGBcounter = 0;
 }
 
