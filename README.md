@@ -79,4 +79,25 @@ All methods are needed for displayList
     String Message ( int x, int y, String text, int textID, String rgbColor );
 
 
+# Documentation for RGB helper lib
+### RGB *newRGB();
+Create new internal RGB-image represenation
+### void fillRGB(RGB *pic, char r, char g, char b);
+fill image with the given color (in RGB)
+### void flushRGB(RGB *pic);
+debugging only - print RGB-representation to stdout. Maybe usefill when playing around with postman and the REST-API directly
+
+## Very simple graphic operations
+#### void plotPoint(RGB *pic, int x, int y, char r, char g, char b);
+#### void plotFilledRect(RGB *pic, int x, int width, int y, int height, char r, char g, char b);
+#### void plotRect(RGB *pic, int x, int width, int y, int height, char r, char g, char b);
+#### void plotLine(RGB *pic, int x0, int y0, int x1, int y1, char r, char g, char b);
+#### void plotCircle(RGB *pic, int xc, int yc, int r, char rcolor, char g, char b);
+#### void plotFilledCircle(RGB *pic, int x0, int y0, int radius, char rcolor, char g, char b);
+
+### void getBase64Encoded(RGB *pic, size_t *size, String &result_str );
+Can be used for debugging purposes 
+### void plotSprite(RGB *pic, int xpos, int ypos, Sprite *sprite );
+This lets you print a sprite onto the internal image at a certain position
+
 (Directory structure follows PlatformIO instructions.)
