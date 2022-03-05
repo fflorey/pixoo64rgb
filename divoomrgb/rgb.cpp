@@ -9,16 +9,16 @@
 
 RGB *newRGB() {
     RGB *tmp = (RGB *)malloc(sizeof(RGB));
-    tmp->r = (char *)malloc(sizeof(char) * SIZE);
-    tmp->g = (char *)malloc(sizeof(char) * SIZE);
-    tmp->b = (char *)malloc(sizeof(char) * SIZE);
+    tmp->r = (unsigned char *)malloc(sizeof(unsigned char) * SIZE);
+    tmp->g = (unsigned char *)malloc(sizeof(unsigned char) * SIZE);
+    tmp->b = (unsigned char *)malloc(sizeof(unsigned char) * SIZE);
     if (tmp == NULL || tmp->r == NULL || tmp->g == NULL || tmp->b == NULL) {
         exit(0);
     }
     return tmp;
 }
 
-void fillRGB(RGB *pic, char r, char g, char b) {
+void fillRGB(RGB *pic, unsigned char r, unsigned char g, unsigned char b) {
     for (int i = 0; i < SIZE; i++) {
         pic->r[i] = r;
         pic->g[i] = g;
@@ -39,7 +39,7 @@ void flushRGB(RGB *pic) {
     }
 }
 
-void plotPoint(RGB *pic, int x, int y, char r, char g, char b) {
+void plotPoint(RGB *pic, int x, int y, unsigned char r, unsigned char g, unsigned char b) {
     if (x >= 0 && x < SIZE_X && y >= 0 && y < SIZE_Y) {
         int pos = y * SIZE_X + x;
         pic->r[pos] = r;
@@ -48,8 +48,8 @@ void plotPoint(RGB *pic, int x, int y, char r, char g, char b) {
     }
 }
 
-void plotFilledRect(RGB *pic, int x, int width, int y, int height, char r,
-                    char g, char b) {
+void plotFilledRect(RGB *pic, int x, int width, int y, int height, unsigned char r,
+                    unsigned char g, unsigned char b) {
     if (width > 0 && height > 0) {
         if (x >= 0 && x < SIZE_X && y >= 0 && y < SIZE_Y &&
             x + width < SIZE_X && y + height < SIZE_Y) {
@@ -62,8 +62,8 @@ void plotFilledRect(RGB *pic, int x, int width, int y, int height, char r,
     }
 }
 
-void plotRect(RGB *pic, int x, int width, int y, int height, char r, char g,
-              char b) {
+void plotRect(RGB *pic, int x, int width, int y, int height, unsigned char r, unsigned char g,
+              unsigned char b) {
     if (width > 0 && height > 0) {
         if (x >= 0 && x < SIZE_X && y >= 0 && y < SIZE_Y &&
             x + width <= SIZE_X && y + height <= SIZE_Y) {
@@ -90,8 +90,8 @@ void plotSprite(RGB *pic, int xpos, int ypos, Sprite *sprite ) {
     }
 }
 
-void plotLine(RGB *pic, int x0, int y0, int x1, int y1, char r, char g,
-              char b) {
+void plotLine(RGB *pic, int x0, int y0, int x1, int y1, unsigned char r, unsigned char g,
+              unsigned char b) {
     int dx = abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
     int dy = -abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
     int err = dx + dy, e2; /* error value e_xy */
@@ -111,8 +111,8 @@ void plotLine(RGB *pic, int x0, int y0, int x1, int y1, char r, char g,
     }
 }
 
-void drawCircle(RGB *pic, int xc, int yc, int x, int y, char r, char g,
-                char b) {
+void drawCircle(RGB *pic, int xc, int yc, int x, int y, unsigned char r, unsigned char g,
+                unsigned char b) {
     plotPoint(pic, xc + x, yc + y, r, g, b);
     plotPoint(pic, xc - x, yc + y, r, g, b);
     plotPoint(pic, xc + x, yc - y, r, g, b);
@@ -123,7 +123,7 @@ void drawCircle(RGB *pic, int xc, int yc, int x, int y, char r, char g,
     plotPoint(pic, xc - y, yc - x, r, g, b);
 }
 
-void plotCircle(RGB *pic, int xc, int yc, int r, char rcolor, char g, char b) {
+void plotCircle(RGB *pic, int xc, int yc, int r, unsigned char rcolor, unsigned char g, unsigned char b) {
     int x = 0, y = r;
     int d = 3 - 2 * r;
     drawCircle(pic, xc, yc, x, y, rcolor, g, b);
@@ -139,8 +139,8 @@ void plotCircle(RGB *pic, int xc, int yc, int r, char rcolor, char g, char b) {
     }
 }
 
-void plotFilledCircle(RGB *pic, int x0, int y0, int radius, char rcolor, char g,
-                      char b) {
+void plotFilledCircle(RGB *pic, int x0, int y0, int radius, unsigned char rcolor, unsigned char g,
+                      unsigned char b) {
     plotCircle(pic, x0, y0, radius, rcolor, g, b);
     int sr = 0;
     while (sr < radius) {
@@ -150,7 +150,7 @@ void plotFilledCircle(RGB *pic, int x0, int y0, int radius, char rcolor, char g,
 }
 
 void getBase64Encoded(RGB *pic, size_t *size, String &res) {
-    char *result = (char *)malloc(sizeof(char) * 3 * SIZE);
+    unsigned char *result = (unsigned char *)malloc(sizeof(unsigned char) * 3 * SIZE);
     for (int i = 0; i < SIZE; i++) {
         result[i * 3] = pic->r[i];
         result[i * 3 + 1] = pic->g[i];

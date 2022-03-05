@@ -10,9 +10,9 @@
 
 
 typedef struct __RGB {
-    char *r;
-    char *g;
-    char *b;
+    unsigned char *r;
+    unsigned char *g;
+    unsigned char *b;
 } RGB;
 
 class Sprite {
@@ -62,14 +62,14 @@ class Sprite {
 };
 
 RGB *newRGB();
-void fillRGB(RGB *pic, char r, char g, char b);
+void fillRGB(RGB *pic, unsigned char r, unsigned char g, unsigned char b);
 void flushRGB(RGB *pic);
-void plotPoint(RGB *pic, int x, int y, char r, char g, char b);
-void plotFilledRect(RGB *pic, int x, int width, int y, int height, char r, char g, char b);
-void plotRect(RGB *pic, int x, int width, int y, int height, char r, char g, char b);
-void plotLine(RGB *pic, int x0, int y0, int x1, int y1, char r, char g, char b);
-void plotCircle(RGB *pic, int xc, int yc, int r, char rcolor, char g, char b);
-void plotFilledCircle(RGB *pic, int x0, int y0, int radius, char rcolor, char g, char b);
+void plotPoint(RGB *pic, int x, int y, unsigned char r, unsigned char g, unsigned char b);
+void plotFilledRect(RGB *pic, int x, int width, int y, int height, unsigned char r, unsigned char g, unsigned char b);
+void plotRect(RGB *pic, int x, int width, int y, int height, unsigned char r, unsigned char g, unsigned char b);
+void plotLine(RGB *pic, int x0, int y0, int x1, int y1, unsigned char r, unsigned char g, unsigned char b);
+void plotCircle(RGB *pic, int xc, int yc, int r, unsigned char rcolor, unsigned char g, unsigned char b);
+void plotFilledCircle(RGB *pic, int x0, int y0, int radius, unsigned char rcolor, unsigned char g, unsigned char b);
 void getBase64Encoded(RGB *pic, size_t *size, String &result_str );
 
 void plotSprite(RGB *pic, int xpos, int ypos, Sprite *sprite );
