@@ -5,6 +5,13 @@ The REST API can be found at
 https://www.divoom.com/de-de/apps/help-center#!hc-pixoo64-developeropen-sourcesdkapiopen-source
 (as of Feb 2022)
 
+## Tutorial
+
+I recorded a screencast to explain on how to use the library in your esp32 projects. 
+
+https://www.youtube.com/watch?v=HHFJNIR5YQw
+
+
 ## Thanks
 A big "thank you" for the idea to create the image in memory upfront with some simple algorithms goes to Ron Talman and his work: 
 https://github.com/SomethingWithComputers/pixoo
