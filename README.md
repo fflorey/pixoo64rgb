@@ -61,7 +61,14 @@ void loop() {
 ```
 
 # Documentation for Divoom64Communicator - class
+This class is performing all the calls to the DIVOOM64-Device.
+All of the following calls are conducted by calling the device via http in your local network.
+### playBuzzer ( int ActiveTimeInCycle, int OffTimeInCycle, int PlayTotalTime );
+Play the buzzer. Example: If you want to get 5 beeps in one second you will use: playBuzzer ( 100,100,1000);
 
+### int sendRGB(RGB *screen);
+This function will send the screen to the Device. This function is 
+necessary to make any other graphics operation (e.g. fillRGB)
 ###    int clearAllTexts();
 Clear all texts on display which are drawn with `sendText`, `sendScrollText`.
 ###    int resetPicID();
